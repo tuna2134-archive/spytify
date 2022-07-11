@@ -1,7 +1,15 @@
 from .payloadattr import PayloadAttr
 
+from typing import List
+
 
 class AlbumTracks(PayloadAttr):
+    
+    @property
+    def items(self) -> List[AlbumTrackItem]:
+        return [AlbumTrackItem(item) for item in self.payload["item"]]
+
+class AlbumTrackItem(PayloadAttr):
     pass
 
 class Album(PayloadAttr):
