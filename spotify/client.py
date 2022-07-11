@@ -1,6 +1,7 @@
 from .http import SpotifyRequester
 from .account import Account
 from .albums import Album
+from .user import User
 
 
 class Client:
@@ -25,6 +26,9 @@ class Client:
         Returns:
             Account: account object"""
         return Account(await self.requester.get_token(client_id, client_secret))
+    
+    async def get_user(self) -> User:
+        return User(await self.http.get_user())
 
     async def close(self) -> None:
         "Close the client."
