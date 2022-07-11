@@ -31,7 +31,7 @@ class SpotifyRequester:
         elif response.status_code == 204:
             return None
         elif response.status_code == 401:
-            raise TokenError("Token expired")
+            raise TokenError(response.json()["error"]["message"])
         elif response.status_code == 404:
             raise TokenError(response.json()["error"]["message"])
         else:
