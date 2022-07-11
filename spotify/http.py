@@ -55,5 +55,10 @@ class SpotifyRequester:
     async def get_album(self, album_id: str) -> AlbumType:
         return await self.request("GET", f"/albums/{album_id}")
 
+    async def get_album_tracks(
+        self, album_id: str, payload: dict
+    ) -> list:
+        return await self.request("GET", f"/albums/{album_id}/tracks", params=payload)
+
     async def close(self) -> None:
         await self.client.aclose()
