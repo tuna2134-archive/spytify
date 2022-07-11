@@ -10,7 +10,7 @@ class AlbumTracks(PayloadAttr):
     
     @property
     def items(self) -> List[AlbumTrackItem]:
-        return [AlbumTrackItem(item) for item in self.payload["items"]]
+        return [AlbumTrackItem(item, self.requester) for item in self.payload["items"]]
 
 class Album(PayloadAttr):
 
