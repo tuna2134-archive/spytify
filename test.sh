@@ -1,0 +1,2 @@
+curl https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy \
+  -H "Authorization: Bearer BQCgXVrzOpT5psEAVfEjbeDjoL-uQJJCiezcJ5ljmmNqR8Lqj2jL6nDiAIQqbfvzsfZU_yxtTdvSsyNT3SCG8KWQ4idtBPo6lm23iw9h4bosO-zDfPU"
